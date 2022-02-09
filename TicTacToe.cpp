@@ -2,11 +2,16 @@
 #include <vector>
 using namespace std;
 
-vector<vector<int>> CreateBoard(){
-   vector<vector<int>> board{{0,0,0},{0,0,0},{0,0,0}};
+/**
+* Initialize empty matrix for new game
+*/
+vector<vector<char>> CreateBoard(){
+   vector<vector<char>> board{{'','',''},{'','',''},{'','',''}};
    return board; 
 }
 
 int main(){
-    vector<vector<int>> board = CreateBoard();
+    vector<vector<char>> board = CreateBoard();
+   
+    return 0;
 }
