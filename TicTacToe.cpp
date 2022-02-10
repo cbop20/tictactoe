@@ -26,6 +26,12 @@ void DisplayBoard(vector<vector<char>> &board){
 }
 
 /**
+ * Update the board at the given position with the provided marker
+ */
+void PlaceMarker(vector<int> pos, char marker, vector<vector<char>> &board){
+    board[pos[0]][pos[1]] = marker;
+  }
+/**
  * Prompt player for position they would like to play
  */
 vector<int> GetPlayerChoice(){
