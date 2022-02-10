@@ -25,6 +25,34 @@ void DisplayBoard(vector<vector<char>> &board){
     }
 }
 
+/**
+ * Prompt player for position they would like to play
+ */
+vector<int> GetPlayerChoice(){
+    int row;
+    int col;
+    bool good = false;
+    while(!good){
+        cout << "Enter your choice as a row col coordinates seperated by a space" << endl;
+        cin >> row >> col;
+        while(!cin){
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(),'\n');
+            cout << "Enter your choice as a row col coordinates seperated by a space" << endl;
+            cin >> row >> col;
+        }
+        if((row<=3)&&(row>=1)&&(col<=3)&&col>=(1)){
+            good = true;
+        }
+        else{
+            cout << "Row and Col must be between 1 and 3" << endl;
+        }
+    }
+    vector<int> ret = {row-1,col-1};
+    return(ret);
+
+}
+
 int main(){
     vector<vector<char>> board = CreateBoard();
 
