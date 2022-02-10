@@ -25,6 +25,9 @@ void DisplayBoard(vector<vector<char>> board){
     }
 }
 
+/**
+ * Prompt player for position they would like to play
+ */
 vector<int> GetPlayerChoice(){
     int row;
     int col;
