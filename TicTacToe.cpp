@@ -31,6 +31,7 @@ void DisplayBoard(vector<vector<char>> &board){
 void PlaceMarker(vector<int> pos, char marker, vector<vector<char>> &board){
     board[pos[0]][pos[1]] = marker;
   }
+  
 /**
  * Prompt player for position they would like to play
  */
@@ -38,7 +39,7 @@ vector<int> GetPlayerChoice(){
     int row;
     int col;
     bool good = false;
-    while(!good){
+    while(!good){ //Prevents player from inputing anything other than an integer
         cout << "Enter your choice as a row col coordinates seperated by a space" << endl;
         cin >> row >> col;
         while(!cin){
@@ -61,8 +62,32 @@ vector<int> GetPlayerChoice(){
 
 int main(){
     vector<vector<char>> board = CreateBoard();
-
     DisplayBoard(board);
-   
+    vector<int> pos;
+    int count_turn = 0;
+    int player = 0;
+
+    while(count_turn < 9){
+        player = count_turn%2 + 1;
+        cout << "Player " << player << endl;
+        pos = GetPlayerChoice();
+
+        switch(player){
+            case 1: 
+                PlaceMarker(pos, 'X', board);
+                break;
+            case 2: 
+                PlaceMarker(pos, 'O', board);
+                break;
+            default: 
+                cout << "Error in switch" << endl;
+                break;
+        }
+        DisplayBoard(board);
+        count_turn++;
+    }
+
+    cout << "Game Over" << endl;
+
     return 0;
 }
