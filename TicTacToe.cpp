@@ -13,15 +13,15 @@ vector<vector<char>> CreateBoard(){
 /**
  *  Display the 3x3 matrix
  */
-void DisplayBoard(vector<vector<char>> board){
-    cout << "-------------" << endl;
+void DisplayBoard(vector<vector<char>> &board){
+    cout << "---1---2---3--" << endl;
     for(int i = 0; i < board.size(); i++){
-        cout << "| ";
+        cout << i+1 <<"| ";
         for(int j = 0; j < board[i].size(); j++) {
             cout << board[i][j] << " | ";
         }
         cout << endl;
-        cout << "-------------" << endl;
+        cout << " -------------" << endl;
     }
 }
 
