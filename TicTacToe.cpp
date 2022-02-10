@@ -26,26 +26,26 @@ void DisplayBoard(vector<vector<char>> board){
 }
 
 vector<int> GetPlayerChoice(){
-    int x;
-    int y;
+    int row;
+    int col;
     bool good = false;
-    while(good == false){
-        cout << "Enter your choice as a x y coordinates seperated by a space" << endl;
-        cin >> x >> y;
+    while(!good){
+        cout << "Enter your choice as a row col coordinates seperated by a space" << endl;
+        cin >> row >> col;
         while(!cin){
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(),'\n');
-            cout << "Enter your choice as a x y coordinates seperated by a space" << endl;
-            cin >> x >> y;
+            cout << "Enter your choice as a row col coordinates seperated by a space" << endl;
+            cin >> row >> col;
         }
-        if((x<=3)&&(x>=1)&&(y<=3)&&y>=(1)){
+        if((row<=3)&&(row>=1)&&(col<=3)&&col>=(1)){
             good = true;
         }
         else{
-            cout << "X and Y must be between 1 and 3" << endl;
+            cout << "Row and Col must be between 1 and 3" << endl;
         }
     }
-    vector<int> ret = {x-1,y-1};
+    vector<int> ret = {row-1,col-1};
     return(ret);
 
 }
