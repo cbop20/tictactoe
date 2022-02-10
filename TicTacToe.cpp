@@ -38,7 +38,7 @@ vector<int> GetPlayerChoice(){
             cout << "Enter your choice as a x y coordinates seperated by a space" << endl;
             cin >> x >> y;
         }
-        if((x<=3)&&(x>=1)&&(y<=3)&&y<=(1)){
+        if((x<=3)&&(x>=1)&&(y<=3)&&y>=(1)){
             good = true;
         }
         else{
